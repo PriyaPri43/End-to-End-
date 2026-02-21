@@ -16,7 +16,7 @@ export default function Orders() {
 
   const loadOrders = () => {
     axios
-      .get("http://localhost:5000/api/orders")
+      .get("https://end-to-end-7.onrender.com/api/orders")
       .then((res) => setOrders(res.data));
   };
 
@@ -26,7 +26,7 @@ export default function Orders() {
 
   const cancelOrder = async (id) => {
     const res = await axios.patch(
-      `http://localhost:5000/api/orders/${id}/cancel`
+      `https://end-to-end-7.onrender.com/api/orders/${id}/cancel`
     );
 
     alert("Order cancelled");

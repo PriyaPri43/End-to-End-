@@ -10,7 +10,7 @@ export default function Products() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/products")
+      .get("https://end-to-end-7.onrender.com/api/products")
       .then((res) => setProducts(res.data));
   }, []);
 

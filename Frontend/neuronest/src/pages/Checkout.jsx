@@ -14,7 +14,7 @@ export default function Checkout() {
   const handlePayment = async () => {
     // create order in DB
     const orderRes = await axios.post(
-      "http://localhost:5000/api/orders",
+      "https://end-to-end-7.onrender.com/api/orders",
       {
         phone: "919790279592",
         items,
@@ -26,7 +26,7 @@ export default function Checkout() {
 
     // create Razorpay order
     const payRes = await axios.post(
-      "http://localhost:5000/api/orders/payment-order",
+      "https://end-to-end-7.onrender.com/api/orders/payment-order",
       { amount: total }
     );
 
@@ -45,7 +45,7 @@ export default function Checkout() {
       }, 
 
       handler: async function (response) {
-        const verifyRes = await axios.post("http://localhost:5000/api/orders/verify-payment",
+        const verifyRes = await axios.post("https://end-to-end-7.onrender.com/api/orders/verify-payment",
         {
           ...response,
         orderId,
