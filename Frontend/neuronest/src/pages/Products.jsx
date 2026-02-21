@@ -9,10 +9,13 @@ export default function Products() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios
-      .get("https://end-to-end-7.onrender.com/api/products")
-      .then((res) => setProducts(res.data));
-  }, []);
+  axios
+    .get("https://end-to-end-7.onrender.com/api/products")
+    .then((res) => {
+      console.log("PRODUCTS:", res.data);
+      setProducts(res.data);
+    });
+}, []);
 
   return (
     <div className="container mt-4">
