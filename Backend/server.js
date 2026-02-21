@@ -8,14 +8,13 @@ const orderRoutes = require("./routes/orderRoutes");
 
 const app = express();
 
-app.use(cors());
-app.use(express.json());
-
 app.use(
   cors({
-    origin: "https://end-to-end-tau.vercel.app/",
+    origin: "https://end-to-end-tau.vercel.app",
   })
 );
+
+app.use(express.json());
 
 // routes
 app.use("/api/products", productRoutes);
